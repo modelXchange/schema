@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hugging Face Model Card Template Data",
+  "description": "JSON Schema for the template variables used by huggingface_hub/templates/modelcard_template.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  },
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "description": "Display identifier or name of the model."
+    },
+    "model_summary": {
+      "type": "string",
+      "description": "Short summary shown near the top of the model card."
+    },
+    "model_description": {
+      "type": "string",
+      "description": "Long-form description of the model."
+    },
+    "developers": {
+      "$ref": "#/$defs/stringArray",
+      "description": "Person, team, or organization that developed the model."
+    },
+    "funded_by": {
+      "$ref": "#/$defs/stringArray",
+      "description": "Optional funding source for the model."
+    },
+    "shared_by": {
+      "$ref": "#/$defs/stringArray",
+      "description": "Optional person, team, or organization that shared the model."
+    },
+    "model_type": {
+      "type": "string",
+      "description": "Model family or task type."
+    },
+    "language": {
+      "$ref": "#/$defs/stringArray",
+      "description": "Language or languages relevant to the model."
+    },
+    "license": {
+      "type": "string",
+      "description": "License identifier or license text reference."
+    },
+    "base_model": {
+      "$ref": "#/$defs/stringArray",
+      "description": "Optional source model used for fine-tuning or adaptation."
+    },
+    "repo": {
+      "type": "string",
+      "description": "Optional repository URL or reference."
+    },
+    "paper": {
+      "type": "string",
+      "description": "Optional paper URL or citation reference."
+    },
+    "demo": {
+      "type": "string",
+      "description": "Optional demo URL or description."
+    },
+    "direct_use": {
+      "type": "string",
+      "description": "Primary intended uses of the model."
+    },
+    "downstream_use": {
+      "type": "string",
+      "description": "Optional downstream or derivative use cases."
+    },
+    "out_of_scope_use": {
+      "type": "string",
+      "description": "Uses that should be considered out of scope."
+    },
+    "bias_risks_limitations": {
+      "type": "string",
+      "description": "Known biases, risks, or limitations."
+    },
+    "bias_recommendations": {
+      "type": "string",
+      "description": "Recommendations for safe or appropriate use."
+    },
+    "get_started_code": {
+      "type": "string",
+      "description": "Code snippet or instructions for getting started with the model."
+    },
+    "training_data": {
+      "type": "string",
+      "description": "Description of the training data."
+    },
+    "preprocessing": {
+      "type": "string",
+      "description": "Optional preprocessing details."
+    },
+    "training_regime": {
+      "type": "string",
+      "description": "Training procedure or regime summary."
+    },
+    "speeds_sizes_times": {
+      "type": "string",
+      "description": "Optional training or inference speeds, model sizes, or timing information."
+    },
+    "testing_data": {
+      "type": "string",
+      "description": "Description of testing or evaluation data."
+    },
+    "testing_factors": {
+      "type": "string",
+      "description": "Factors considered during evaluation."
+    },
+    "testing_metrics": {
+      "type": "string",
+      "description": "Metrics used to evaluate the model."
+    },
+    "results": {
+      "type": "string",
+      "description": "Detailed evaluation results."
+    },
+    "results_summary": {
+      "type": "string",
+      "description": "Short summary of evaluation results."
+    },
+    "model_examination": {
+      "type": "string",
+      "description": "Optional analysis or examination of model behavior."
+    },
+    "hardware_type": {
+      "type": "string",
+      "description": "Hardware used for training or relevant environmental impact estimates."
+    },
+    "hours_used": {
+      "type": "string",
+      "description": "Hours of compute used."
+    },
+    "cloud_provider": {
+      "type": "string",
+      "description": "Cloud provider used, if applicable."
+    },
+    "cloud_region": {
+      "type": "string",
+      "description": "Cloud region used, if applicable."
+    },
+    "co2_emitted": {
+      "type": "string",
+      "description": "Estimated carbon emissions."
+    },
+    "model_specs": {
+      "type": "string",
+      "description": "Model architecture and objective details."
+    },
+    "compute_infrastructure": {
+      "type": "string",
+      "description": "Description of the compute infrastructure."
+    },
+    "hardware_requirements": {
+      "type": "string",
+      "description": "Hardware requirements or hardware details."
+    },
+    "software": {
+      "type": "string",
+      "description": "Software stack or software requirements."
+    },
+    "citation_bibtex": {
+      "type": "string",
+      "description": "Optional BibTeX citation."
+    },
+    "citation_apa": {
+      "type": "string",
+      "description": "Optional APA citation."
+    },
+    "glossary": {
+      "type": "string",
+      "description": "Optional glossary content."
+    },
+    "more_information": {
+      "type": "string",
+      "description": "Optional additional information."
+    },
+    "model_card_authors": {
+      "$ref": "#/$defs/stringArray",
+      "description": "Optional author or authors of the model card."
+    },
+    "model_card_contact": {
+      "type": "string",
+      "description": "Contact information for the model card."
+    }
+  },
+  "examples": [
+    {
+      "model_id": "org/example-model",
+      "model_summary": "A concise summary of the model.",
+      "model_description": "A longer description covering what the model does and why it exists.",
+      "developers": [
+        "Example Research"
+      ],
+      "model_type": "text-classification",
+      "language": [
+        "en"
+      ],
+      "license": "apache-2.0",
+      "direct_use": "Use for classifying customer support tickets.",
+      "out_of_scope_use": "Do not use for medical diagnosis.",
+      "bias_risks_limitations": "Performance may vary across dialects.",
+      "get_started_code": "from transformers import pipeline",
+      "training_data": "Trained on a curated set of public support conversations.",
+      "training_regime": "Supervised fine-tuning for three epochs.",
+      "testing_data": "Held-out support conversations from the same domain.",
+      "testing_factors": "Domain and language variation.",
+      "testing_metrics": "Accuracy and macro F1.",
+      "results": "Macro F1 reached 0.91 on the held-out set.",
+      "hardware_type": "NVIDIA A100",
+      "hours_used": "12",
+      "co2_emitted": "5.2 kg",
+      "model_card_contact": "ml-team@example.com"
+    }
+  ]
+}
