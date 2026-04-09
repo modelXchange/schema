@@ -6,34 +6,34 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelbase"
+      "$ref": "org.synapse.modelxchange-modelbase"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modeldetails"
+      "$ref": "org.synapse.modelxchange-modeldetails"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-uses"
+      "$ref": "org.synapse.modelxchange-uses"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-biasrisks"
+      "$ref": "org.synapse.modelxchange-biasrisks"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-getstarted"
+      "$ref": "org.synapse.modelxchange-getstarted"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-trainingdetails"
+      "$ref": "org.synapse.modelxchange-trainingdetails"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-evaluation"
+      "$ref": "org.synapse.modelxchange-evaluation"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-environmentalimpact"
+      "$ref": "org.synapse.modelxchange-environmentalimpact"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcardcontact"
+      "$ref": "org.synapse.modelxchange-modelcardcontact"
     },
     {
-      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-synapsemod"
+      "$ref": "org.synapse.modelxchange-synapsemod"
     }
   ]
 }

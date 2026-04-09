@@ -4,27 +4,17 @@
   "title": "Hugging Face Model Card Authors Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Model Card Authors [optional]'. This is an optional section in the original template.",
   "type": "object",
-  "definitions": {
-    "modelCardAuthors": {
-      "type": "object",
-      "properties": {
-        "model_card_authors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "description": "Optional author or authors of the model card.",
-          "default": [
-            "[More Information Needed]"
-          ]
-        }
-      }
+  "properties": {
+    "model_card_authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Optional author or authors of the model card.",
+      "default": [
+        "[More Information Needed]"
+      ]
     }
-  },
-  "allOf": [
-    {
-      "$ref": "#/definitions/modelCardAuthors"
-    }
-  ]
+  }
 }

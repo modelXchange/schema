@@ -4,24 +4,14 @@
   "title": "Hugging Face Model Card Contact Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Model Card Contact'. This is a non-optional section in the original template.",
   "type": "object",
-  "definitions": {
-    "modelCardContact": {
-      "type": "object",
-      "properties": {
-        "model_card_contact": {
-          "type": "string",
-          "description": "Contact information for the model card.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "model_card_contact"
-      ]
+  "properties": {
+    "model_card_contact": {
+      "type": "string",
+      "description": "Contact information for the model card.",
+      "default": "[More Information Needed]"
     }
   },
-  "allOf": [
-    {
-      "$ref": "#/definitions/modelCardContact"
-    }
+  "required": [
+    "model_card_contact"
   ]
 }

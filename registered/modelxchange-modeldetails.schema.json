@@ -4,196 +4,98 @@
   "title": "Hugging Face Model Details Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Model Details'. This is a non-optional section in the original template and includes fields from the optional '### Model Sources' subsection as flat properties for Synapse compatibility.",
   "type": "object",
-  "definitions": {
-    "modelDescription": {
-      "type": "object",
-      "properties": {
-        "model_description": {
-          "type": "string",
-          "description": "Long-form description of the model.",
-          "default": ""
-        }
-      },
-      "required": [
-        "model_description"
-      ]
+  "properties": {
+    "model_description": {
+      "type": "string",
+      "description": "Long-form description of the model.",
+      "default": ""
     },
     "developers": {
-      "type": "object",
-      "properties": {
-        "developers": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "description": "Person, team, or organization that developed the model.",
-          "default": [
-            "[More Information Needed]"
-          ]
-        }
+      "type": "array",
+      "items": {
+        "type": "string"
       },
-      "required": [
-        "developers"
+      "minItems": 1,
+      "description": "Person, team, or organization that developed the model.",
+      "default": [
+        "[More Information Needed]"
       ]
     },
-    "fundedBy": {
-      "type": "object",
-      "properties": {
-        "funded_by": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "description": "Optional funding source for the model.",
-          "default": [
-            "[More Information Needed]"
-          ]
-        }
-      }
-    },
-    "sharedBy": {
-      "type": "object",
-      "properties": {
-        "shared_by": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "description": "Optional person, team, or organization that shared the model.",
-          "default": [
-            "[More Information Needed]"
-          ]
-        }
-      }
-    },
-    "modelType": {
-      "type": "object",
-      "properties": {
-        "model_type": {
-          "type": "string",
-          "description": "Model family or task type.",
-          "default": "[More Information Needed]"
-        }
+    "funded_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
       },
-      "required": [
-        "model_type"
+      "minItems": 1,
+      "description": "Optional funding source for the model.",
+      "default": [
+        "[More Information Needed]"
       ]
+    },
+    "shared_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Optional person, team, or organization that shared the model.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "model_type": {
+      "type": "string",
+      "description": "Model family or task type.",
+      "default": "[More Information Needed]"
     },
     "language": {
-      "type": "object",
-      "properties": {
-        "language": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "description": "Language or languages relevant to the model.",
-          "default": [
-            "[More Information Needed]"
-          ]
-        }
+      "type": "array",
+      "items": {
+        "type": "string"
       },
-      "required": [
-        "language"
+      "minItems": 1,
+      "description": "Language or languages relevant to the model.",
+      "default": [
+        "[More Information Needed]"
       ]
     },
     "license": {
-      "type": "object",
-      "properties": {
-        "license": {
-          "type": "string",
-          "description": "License identifier or license text reference.",
-          "default": "[More Information Needed]"
-        }
+      "type": "string",
+      "description": "License identifier or license text reference.",
+      "default": "[More Information Needed]"
+    },
+    "base_model": {
+      "type": "array",
+      "items": {
+        "type": "string"
       },
-      "required": [
-        "license"
+      "minItems": 1,
+      "description": "Optional source model used for fine-tuning or adaptation.",
+      "default": [
+        "[More Information Needed]"
       ]
     },
-    "baseModel": {
-      "type": "object",
-      "properties": {
-        "base_model": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "description": "Optional source model used for fine-tuning or adaptation.",
-          "default": [
-            "[More Information Needed]"
-          ]
-        }
-      }
-    },
     "repo": {
-      "type": "object",
-      "properties": {
-        "repo": {
-          "type": "string",
-          "description": "Optional repository URL or reference.",
-          "default": "[More Information Needed]"
-        }
-      }
+      "type": "string",
+      "description": "Optional repository URL or reference.",
+      "default": "[More Information Needed]"
     },
     "paper": {
-      "type": "object",
-      "properties": {
-        "paper": {
-          "type": "string",
-          "description": "Optional paper URL or citation reference.",
-          "default": "[More Information Needed]"
-        }
-      }
+      "type": "string",
+      "description": "Optional paper URL or citation reference.",
+      "default": "[More Information Needed]"
     },
     "demo": {
-      "type": "object",
-      "properties": {
-        "demo": {
-          "type": "string",
-          "description": "Optional demo URL or description.",
-          "default": "[More Information Needed]"
-        }
-      }
+      "type": "string",
+      "description": "Optional demo URL or description.",
+      "default": "[More Information Needed]"
     }
   },
-  "allOf": [
-    {
-      "$ref": "#/definitions/modelDescription"
-    },
-    {
-      "$ref": "#/definitions/developers"
-    },
-    {
-      "$ref": "#/definitions/fundedBy"
-    },
-    {
-      "$ref": "#/definitions/sharedBy"
-    },
-    {
-      "$ref": "#/definitions/modelType"
-    },
-    {
-      "$ref": "#/definitions/language"
-    },
-    {
-      "$ref": "#/definitions/license"
-    },
-    {
-      "$ref": "#/definitions/baseModel"
-    },
-    {
-      "$ref": "#/definitions/repo"
-    },
-    {
-      "$ref": "#/definitions/paper"
-    },
-    {
-      "$ref": "#/definitions/demo"
-    }
+  "required": [
+    "model_description",
+    "developers",
+    "model_type",
+    "language",
+    "license"
   ]
 }

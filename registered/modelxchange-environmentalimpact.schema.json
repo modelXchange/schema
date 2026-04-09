@@ -4,88 +4,38 @@
   "title": "Hugging Face Environmental Impact Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Environmental Impact'. This is a non-optional section in the original template.",
   "type": "object",
-  "definitions": {
-    "hardwareType": {
-      "type": "object",
-      "properties": {
-        "hardware_type": {
-          "type": "string",
-          "description": "Hardware used for training or relevant environmental impact estimates.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "hardware_type"
-      ]
+  "properties": {
+    "hardware_type": {
+      "type": "string",
+      "description": "Hardware used for training or relevant environmental impact estimates.",
+      "default": "[More Information Needed]"
     },
-    "hoursUsed": {
-      "type": "object",
-      "properties": {
-        "hours_used": {
-          "type": "string",
-          "description": "Hours of compute used.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "hours_used"
-      ]
+    "hours_used": {
+      "type": "string",
+      "description": "Hours of compute used.",
+      "default": "[More Information Needed]"
     },
-    "cloudProvider": {
-      "type": "object",
-      "properties": {
-        "cloud_provider": {
-          "type": "string",
-          "description": "Cloud provider used, if applicable.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "cloud_provider"
-      ]
+    "cloud_provider": {
+      "type": "string",
+      "description": "Cloud provider used, if applicable.",
+      "default": "[More Information Needed]"
     },
-    "cloudRegion": {
-      "type": "object",
-      "properties": {
-        "cloud_region": {
-          "type": "string",
-          "description": "Cloud region used, if applicable.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "cloud_region"
-      ]
+    "cloud_region": {
+      "type": "string",
+      "description": "Cloud region used, if applicable.",
+      "default": "[More Information Needed]"
     },
-    "co2Emitted": {
-      "type": "object",
-      "properties": {
-        "co2_emitted": {
-          "type": "string",
-          "description": "Estimated carbon emissions.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "co2_emitted"
-      ]
+    "co2_emitted": {
+      "type": "string",
+      "description": "Estimated carbon emissions.",
+      "default": "[More Information Needed]"
     }
   },
-  "allOf": [
-    {
-      "$ref": "#/definitions/hardwareType"
-    },
-    {
-      "$ref": "#/definitions/hoursUsed"
-    },
-    {
-      "$ref": "#/definitions/cloudProvider"
-    },
-    {
-      "$ref": "#/definitions/cloudRegion"
-    },
-    {
-      "$ref": "#/definitions/co2Emitted"
-    }
+  "required": [
+    "hardware_type",
+    "hours_used",
+    "cloud_provider",
+    "cloud_region",
+    "co2_emitted"
   ]
 }

@@ -4,21 +4,11 @@
   "title": "Hugging Face Glossary Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Glossary [optional]'. This is an optional section in the original template.",
   "type": "object",
-  "definitions": {
+  "properties": {
     "glossary": {
-      "type": "object",
-      "properties": {
-        "glossary": {
-          "type": "string",
-          "description": "Optional glossary content.",
-          "default": "[More Information Needed]"
-        }
-      }
+      "type": "string",
+      "description": "Optional glossary content.",
+      "default": "[More Information Needed]"
     }
-  },
-  "allOf": [
-    {
-      "$ref": "#/definitions/glossary"
-    }
-  ]
+  }
 }

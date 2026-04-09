@@ -4,66 +4,30 @@
   "title": "Hugging Face Training Details Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Training Details'. This is a non-optional section in the original template, with child subsections flattened for Synapse compatibility.",
   "type": "object",
-  "definitions": {
-    "trainingData": {
-      "type": "object",
-      "properties": {
-        "training_data": {
-          "type": "string",
-          "description": "Description of the training data.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "training_data"
-      ]
+  "properties": {
+    "training_data": {
+      "type": "string",
+      "description": "Description of the training data.",
+      "default": "[More Information Needed]"
     },
     "preprocessing": {
-      "type": "object",
-      "properties": {
-        "preprocessing": {
-          "type": "string",
-          "description": "Optional preprocessing details.",
-          "default": "[More Information Needed]"
-        }
-      }
+      "type": "string",
+      "description": "Optional preprocessing details.",
+      "default": "[More Information Needed]"
     },
-    "trainingRegime": {
-      "type": "object",
-      "properties": {
-        "training_regime": {
-          "type": "string",
-          "description": "Training procedure or regime summary.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "training_regime"
-      ]
+    "training_regime": {
+      "type": "string",
+      "description": "Training procedure or regime summary.",
+      "default": "[More Information Needed]"
     },
-    "speedsSizesTimes": {
-      "type": "object",
-      "properties": {
-        "speeds_sizes_times": {
-          "type": "string",
-          "description": "Optional training or inference speeds, model sizes, or timing information.",
-          "default": "[More Information Needed]"
-        }
-      }
+    "speeds_sizes_times": {
+      "type": "string",
+      "description": "Optional training or inference speeds, model sizes, or timing information.",
+      "default": "[More Information Needed]"
     }
   },
-  "allOf": [
-    {
-      "$ref": "#/definitions/trainingData"
-    },
-    {
-      "$ref": "#/definitions/preprocessing"
-    },
-    {
-      "$ref": "#/definitions/trainingRegime"
-    },
-    {
-      "$ref": "#/definitions/speedsSizesTimes"
-    }
+  "required": [
+    "training_data",
+    "training_regime"
   ]
 }

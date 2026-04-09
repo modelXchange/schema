@@ -4,24 +4,14 @@
   "title": "Hugging Face Getting Started Module",
   "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## How to Get Started with the Model'. This is a non-optional section in the original template.",
   "type": "object",
-  "definitions": {
-    "getStartedCode": {
-      "type": "object",
-      "properties": {
-        "get_started_code": {
-          "type": "string",
-          "description": "Code snippet or instructions for getting started with the model.",
-          "default": "[More Information Needed]"
-        }
-      },
-      "required": [
-        "get_started_code"
-      ]
+  "properties": {
+    "get_started_code": {
+      "type": "string",
+      "description": "Code snippet or instructions for getting started with the model.",
+      "default": "[More Information Needed]"
     }
   },
-  "allOf": [
-    {
-      "$ref": "#/definitions/getStartedCode"
-    }
+  "required": [
+    "get_started_code"
   ]
 }
