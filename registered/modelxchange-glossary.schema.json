@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-glossary",
+  "title": "Hugging Face Glossary Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Glossary [optional]'. This is an optional section in the original template.",
+  "type": "object",
+  "properties": {
+    "glossary": {
+      "type": "string",
+      "description": "Optional glossary content.",
+      "default": "[More Information Needed]"
+    }
+  }
+}

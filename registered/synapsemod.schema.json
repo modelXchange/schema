@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-synapsemod",
+  "title": "Synapse Model Card Extension Component",
+  "description": "Composable Synapse-specific flat schema component for risks and model use conditions. The properties are flat rather than nested for Synapse compatibility.",
+  "type": "object",
+  "properties": {
+    "privacy_risk": {
+      "type": "string",
+      "description": "Privacy-related concerns such as memorization, leakage, re-identification, or sensitive data exposure."
+    },
+    "other_risk": {
+      "type": "string",
+      "description": "Other relevant risks such as fairness, safety, misuse, security, or operational concerns."
+    },
+    "mitigations": {
+      "type": "string",
+      "description": "Known mitigations, safeguards, or recommended controls."
+    },
+    "model_use_conditions": {
+      "type": "array",
+      "description": "List of model use conditions, intended to capture Data Use Ontology style labels or equivalent policy labels.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

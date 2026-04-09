@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcardminimal",
+  "title": "Minimal Model Card Schema",
+  "description": "Flat minimal composed model card schema that includes only the required Hugging Face modules plus the Synapse extension component.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "org.synapse.modelxchange-modelbase"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-modeldetails"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-uses"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-biasrisks"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-getstarted"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-trainingdetails"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-evaluation"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-environmentalimpact"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-modelcardcontact"
+    },
+    {
+      "$ref": "org.synapse.modelxchange-synapsemod"
+    }
+  ]
+}

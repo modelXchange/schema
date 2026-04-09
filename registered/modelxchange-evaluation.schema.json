@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-evaluation",
+  "title": "Hugging Face Evaluation Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Evaluation'. This is a non-optional section in the original template, with child subsections flattened for Synapse compatibility.",
+  "type": "object",
+  "properties": {
+    "testing_data": {
+      "type": "string",
+      "description": "Description of testing or evaluation data.",
+      "default": "[More Information Needed]"
+    },
+    "testing_factors": {
+      "type": "string",
+      "description": "Factors considered during evaluation.",
+      "default": "[More Information Needed]"
+    },
+    "testing_metrics": {
+      "type": "string",
+      "description": "Metrics used to evaluate the model.",
+      "default": "[More Information Needed]"
+    },
+    "results": {
+      "type": "string",
+      "description": "Detailed evaluation results.",
+      "default": "[More Information Needed]"
+    },
+    "results_summary": {
+      "type": "string",
+      "description": "Short summary of evaluation results.",
+      "default": ""
+    }
+  },
+  "required": [
+    "testing_data",
+    "testing_factors",
+    "testing_metrics",
+    "results",
+    "results_summary"
+  ]
+}

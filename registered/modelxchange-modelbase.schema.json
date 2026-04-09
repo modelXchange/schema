@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelbase",
+  "title": "Hugging Face Model Base Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '# Model Card for {{ model_id }}' plus the top-level model summary block. These are non-optional top-level fields in the original template.",
+  "type": "object",
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "description": "Display identifier or name of the model.",
+      "default": "Model ID"
+    },
+    "model_summary": {
+      "type": "string",
+      "description": "Short summary shown near the top of the model card.",
+      "default": ""
+    }
+  },
+  "required": [
+    "model_id",
+    "model_summary"
+  ]
+}

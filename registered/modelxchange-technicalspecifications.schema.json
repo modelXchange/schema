@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-technicalspecifications",
+  "title": "Hugging Face Technical Specifications Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Technical Specifications [optional]'. This is an optional section in the original template.",
+  "type": "object",
+  "properties": {
+    "model_specs": {
+      "type": "string",
+      "description": "Model architecture and objective details.",
+      "default": "[More Information Needed]"
+    },
+    "compute_infrastructure": {
+      "type": "string",
+      "description": "Description of the compute infrastructure.",
+      "default": "[More Information Needed]"
+    },
+    "hardware_requirements": {
+      "type": "string",
+      "description": "Hardware requirements or hardware details.",
+      "default": "[More Information Needed]"
+    },
+    "software": {
+      "type": "string",
+      "description": "Software stack or software requirements.",
+      "default": "[More Information Needed]"
+    }
+  }
+}

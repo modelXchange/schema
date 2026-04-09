@@ -1,0 +1,45 @@
+name: Main CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "registered/**"
+      - "scripts/register_schema.py"
+      - ".github/workflows/main-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "registered/**"
+      - "scripts/register_schema.py"
+      - ".github/workflows/main-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  register-schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip synapseclient
+
+      - name: Dry-run validate registered schemas
+        if: github.event_name == 'pull_request'
+        env:
+          SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_AUTH_TOKEN }}
+        run: python scripts/register_schema.py --dry-run registered
+
+      - name: Register schemas on main
+        if: github.event_name == 'push'
+        env:
+          SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_AUTH_TOKEN }}
+        run: python scripts/register_schema.py registered

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-moreinformation",
+  "title": "Hugging Face More Information Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## More Information [optional]'. This is an optional section in the original template.",
+  "type": "object",
+  "properties": {
+    "more_information": {
+      "type": "string",
+      "description": "Optional additional information.",
+      "default": "[More Information Needed]"
+    }
+  }
+}

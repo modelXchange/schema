@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-environmentalimpact",
+  "title": "Hugging Face Environmental Impact Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Environmental Impact'. This is a non-optional section in the original template.",
+  "type": "object",
+  "properties": {
+    "hardware_type": {
+      "type": "string",
+      "description": "Hardware used for training or relevant environmental impact estimates.",
+      "default": "[More Information Needed]"
+    },
+    "hours_used": {
+      "type": "string",
+      "description": "Hours of compute used.",
+      "default": "[More Information Needed]"
+    },
+    "cloud_provider": {
+      "type": "string",
+      "description": "Cloud provider used, if applicable.",
+      "default": "[More Information Needed]"
+    },
+    "cloud_region": {
+      "type": "string",
+      "description": "Cloud region used, if applicable.",
+      "default": "[More Information Needed]"
+    },
+    "co2_emitted": {
+      "type": "string",
+      "description": "Estimated carbon emissions.",
+      "default": "[More Information Needed]"
+    }
+  },
+  "required": [
+    "hardware_type",
+    "hours_used",
+    "cloud_provider",
+    "cloud_region",
+    "co2_emitted"
+  ]
+}
