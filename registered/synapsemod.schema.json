@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-synapsemod",
+  "title": "Synapse Model Card Extension Component",
+  "description": "Composable Synapse-specific flat schema component for risks and model use conditions. The properties are flat rather than nested for Synapse compatibility.",
+  "type": "object",
+  "definitions": {
+    "privacyRisk": {
+      "type": "object",
+      "properties": {
+        "privacy_risk": {
+          "type": "string",
+          "description": "Privacy-related concerns such as memorization, leakage, re-identification, or sensitive data exposure."
+        }
+      }
+    },
+    "otherRisk": {
+      "type": "object",
+      "properties": {
+        "other_risk": {
+          "type": "string",
+          "description": "Other relevant risks such as fairness, safety, misuse, security, or operational concerns."
+        }
+      }
+    },
+    "mitigations": {
+      "type": "object",
+      "properties": {
+        "mitigations": {
+          "type": "string",
+          "description": "Known mitigations, safeguards, or recommended controls."
+        }
+      }
+    },
+    "modelUseConditions": {
+      "type": "object",
+      "properties": {
+        "model_use_conditions": {
+          "type": "array",
+          "description": "List of model use conditions, intended to capture Data Use Ontology style labels or equivalent policy labels.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/privacyRisk"
+    },
+    {
+      "$ref": "#/definitions/otherRisk"
+    },
+    {
+      "$ref": "#/definitions/mitigations"
+    },
+    {
+      "$ref": "#/definitions/modelUseConditions"
+    }
+  ],
+  "examples": [
+    {
+      "privacy_risk": "Low residual risk of membership inference on rare records.",
+      "other_risk": "Performance may degrade on out-of-distribution cohorts.",
+      "mitigations": "Access is restricted and outputs should be reviewed before downstream use.",
+      "model_use_conditions": [
+        "DUO:0000007",
+        "disease-specific research",
+        "no general clinical use"
+      ]
+    }
+  ]
+}

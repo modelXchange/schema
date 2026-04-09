@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-citation",
+  "title": "Hugging Face Citation Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Citation [optional]'. This is an optional section in the original template.",
+  "type": "object",
+  "definitions": {
+    "citationBibtex": {
+      "type": "object",
+      "properties": {
+        "citation_bibtex": {
+          "type": "string",
+          "description": "Optional BibTeX citation.",
+          "default": "[More Information Needed]"
+        }
+      }
+    },
+    "citationApa": {
+      "type": "object",
+      "properties": {
+        "citation_apa": {
+          "type": "string",
+          "description": "Optional APA citation.",
+          "default": "[More Information Needed]"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/citationBibtex"
+    },
+    {
+      "$ref": "#/definitions/citationApa"
+    }
+  ]
+}

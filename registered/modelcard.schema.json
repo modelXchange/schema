@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcard",
+  "title": "Model Card Schema",
+  "description": "Flat composed model card schema that combines the Hugging Face-derived schema with the Synapse extension component.",
+  "allOf": [
+    {
+      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-huggingface"
+    },
+    {
+      "$ref": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-synapsemod"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-uses",
+  "title": "Hugging Face Uses Module",
+  "description": "Derived from https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md, heading '## Uses'. This is a non-optional section in the original template, though '### Downstream Use' is marked optional.",
+  "type": "object",
+  "definitions": {
+    "directUse": {
+      "type": "object",
+      "properties": {
+        "direct_use": {
+          "type": "string",
+          "description": "Primary intended uses of the model.",
+          "default": "[More Information Needed]"
+        }
+      },
+      "required": [
+        "direct_use"
+      ]
+    },
+    "downstreamUse": {
+      "type": "object",
+      "properties": {
+        "downstream_use": {
+          "type": "string",
+          "description": "Optional downstream or derivative use cases.",
+          "default": "[More Information Needed]"
+        }
+      }
+    },
+    "outOfScopeUse": {
+      "type": "object",
+      "properties": {
+        "out_of_scope_use": {
+          "type": "string",
+          "description": "Uses that should be considered out of scope.",
+          "default": "[More Information Needed]"
+        }
+      },
+      "required": [
+        "out_of_scope_use"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/directUse"
+    },
+    {
+      "$ref": "#/definitions/downstreamUse"
+    },
+    {
+      "$ref": "#/definitions/outOfScopeUse"
+    }
+  ]
+}
