@@ -1,6 +1,6 @@
 # modelXchange Schema
 
-This repository currently contains a JSON Schema derived from the Hugging Face model card template:
+This repository currently contains model card schemas derived from the Hugging Face model card template, composed with Synapse extensions. Schemas are registered under `org.synapse.modelxchange`.
 
 - Upstream reference: [modelcard_template](https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md)
 - Generated schema: `huggingface-modelcard.schema.json`
@@ -8,8 +8,9 @@ This repository currently contains a JSON Schema derived from the Hugging Face m
 - Composed schema: `modelcard.schema.json`
 - Minimal composed schema: `modelcardminimal.schema.json`
 - Hugging Face standalone top-level modules: `modules/`
-- Synapse registry script: `scripts/register_schema.py`
+- Synapse registry script: `scripts/register_schema.py` (add `--dry-run` for validation only)
 - PR workflow: `.github/workflows/main-ci.yml`
+
 
 ## Schema Visualization
 
