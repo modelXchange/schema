@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-hf-basic-metadata",
+  "title": "HuggingFace Basic Metadata Schema",
+  "description": "Schema derived from the HuggingFace hub-docs basic model card metadata template (YAML frontmatter). Source: https://github.com/huggingface/hub-docs/blob/main/modelcard.md",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Languages relevant to the model, using BCP-47 codes (e.g. 'en', 'fr')."
+    },
+    "license": {
+      "type": "string",
+      "description": "License identifier from the HuggingFace license list (e.g. 'apache-2.0'), or 'other' for custom licenses."
+    },
+    "license_name": {
+      "type": "string",
+      "description": "Custom license identifier when license is set to 'other'."
+    },
+    "license_link": {
+      "type": "string",
+      "description": "Path or URL to the license file when license is set to 'other'. Use 'LICENSE' or 'LICENSE.md' for in-repo files."
+    },
+    "library_name": {
+      "type": "string",
+      "description": "ML framework or library name (e.g. 'keras', 'transformers')."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Classification tags for the model (e.g. 'audio', 'automatic-speech-recognition')."
+    },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Dataset identifiers from the HuggingFace Hub."
+    },
+    "buckets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Storage bucket references (e.g. 'my-org/my-bucket')."
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Metric identifiers from the HuggingFace metrics catalog (e.g. 'wer')."
+    },
+    "base_model": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Base model identifier(s) this model is derived from (e.g. 'stabilityai/stable-diffusion-xl-base-1.0'). Can be a single string or a list for merges."
+    },
+    "model_index": {
+      "type": "array",
+      "description": "Structured evaluation results for the model.",
+      "items": {
+        "type": "object",
+        "required": ["name", "results"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Model identifier or display name."
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["task", "dataset", "metrics"],
+              "properties": {
+                "task": {
+                  "type": "object",
+                  "required": ["type"],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "Task type (e.g. 'automatic-speech-recognition')."
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Human-readable task name."
+                    }
+                  }
+                },
+                "dataset": {
+                  "type": "object",
+                  "required": ["type", "name"],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "Dataset identifier from the HuggingFace Hub."
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Human-readable dataset name."
+                    },
+                    "config": {
+                      "type": "string",
+                      "description": "Dataset subset name used in load_dataset()."
+                    },
+                    "split": {
+                      "type": "string",
+                      "description": "Dataset split (e.g. 'test')."
+                    },
+                    "revision": {
+                      "type": "string",
+                      "description": "Dataset revision hash."
+                    },
+                    "args": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "description": "Additional arguments passed to load_dataset()."
+                    }
+                  }
+                },
+                "metrics": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["type", "value"],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Metric identifier (e.g. 'wer')."
+                      },
+                      "value": {
+                        "description": "Metric value (e.g. 20.90)."
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Human-readable metric name (e.g. 'Test WER')."
+                      },
+                      "config": {
+                        "type": "string",
+                        "description": "Metric configuration name used in load_metric()."
+                      },
+                      "args": {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "description": "Arguments passed during Metric.compute()."
+                      },
+                      "verifyToken": {
+                        "type": "string",
+                        "description": "Verification token proving evaluation was generated by HuggingFace."
+                      }
+                    }
+                  }
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Source name (e.g. 'Open LLM Leaderboard')."
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL link to the source."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["language", "license"]
+}
