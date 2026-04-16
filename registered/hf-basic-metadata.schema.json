@@ -128,7 +128,6 @@
                     },
                     "args": {
                       "type": "object",
-                      "additionalProperties": true,
                       "description": "Additional arguments passed to load_dataset()."
                     }
                   }
@@ -156,7 +155,6 @@
                       },
                       "args": {
                         "type": "object",
-                        "additionalProperties": true,
                         "description": "Arguments passed during Metric.compute()."
                       },
                       "verifyToken": {
