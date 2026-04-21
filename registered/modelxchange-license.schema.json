@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-license",
+  "title": "License Extension Module",
+  "description": "Additional license fields from the basic metadata template (hub-docs/modelcard.md) that have no counterpart in the human-readable template. The base license field already exists in modeldetails; this module captures the extra fields needed when license is set to 'other'.",
+  "type": "object",
+  "properties": {
+    "license_name": {
+      "type": "string",
+      "description": "Custom license identifier when license is set to 'other'."
+    },
+    "license_link": {
+      "type": "string",
+      "description": "Path or URL to the license file when license is set to 'other'. Use 'LICENSE' or 'LICENSE.md' for in-repo files."
+    }
+  }
+}

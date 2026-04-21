@@ -1,0 +1,66 @@
+{
+  "$comment": "Example instance of the modelcard composed schema (org.synapse.modelxchange-modelcard). Uses mock Synapse IDs (syn*) in place of HuggingFace identifiers.",
+
+  "model_id": "syn1183975",
+  "model_summary": "A fine-tuned transformer model for biomedical named entity recognition, trained on annotated clinical notes.",
+
+  "model_description": "This model adapts a pre-trained BERT-base architecture to extract biomedical entities (genes, diseases, drugs) from unstructured clinical text. It was fine-tuned on a curated corpus of de-identified clinical notes stored in Synapse.",
+  "developers": ["Sage Bionetworks", "INCLUDE DCC"],
+  "funded_by": ["NIH INCLUDE Project"],
+  "shared_by": ["Sage Bionetworks"],
+  "model_type": "token-classification",
+  "language": ["en"],
+  "license": "apache-2.0",
+  "base_model": ["syn55019267"],
+  "repo": "https://www.synapse.org/#!Synapse:syn11839775",
+  "paper": "https://doi.org/10.1234/example-paper",
+  "demo": "https://www.synapse.org/#!Synapse:syn99281340",
+
+  "direct_use": "Extracting gene, disease, and drug mentions from English biomedical text for downstream knowledge-graph construction.",
+  "downstream_use": "Can be integrated into clinical NLP pipelines for chart review automation or pharmacovigilance signal detection.",
+  "out_of_scope_use": "Not intended for direct clinical decision-making, non-English text, or any use without human review of outputs.",
+
+  "bias_risks_limitations": "The training corpus is predominantly US-based clinical notes from pediatric populations. Performance may degrade on adult or non-US clinical text, and the model may under-represent rare diseases not well-covered in the training set.",
+  "bias_recommendations": "Users should validate model outputs against domain-expert annotations before using results in any downstream analysis. Performance should be re-evaluated when applied to populations or text sources not represented in training.",
+
+  "get_started_code": "from transformers import pipeline\nner = pipeline('ner', model='syn11839775')\nresults = ner('The patient was prescribed metformin for type 2 diabetes.')\nprint(results)",
+
+  "training_data": "A curated set of 12,000 de-identified clinical notes (syn44829103) annotated for biomedical entities by three domain experts with adjudication.",
+  "preprocessing": "Tokenization with WordPiece. Sentences longer than 512 tokens were split with a 128-token overlap window. Entity labels were converted to IOB2 format.",
+  "training_regime": "Fine-tuned for 10 epochs with AdamW optimizer, learning rate 3e-5, batch size 16, linear warmup over 500 steps. Mixed precision (fp16) on a single GPU.",
+  "speeds_sizes_times": "110M parameters. Training took approximately 4 hours on a single NVIDIA A100 40GB.",
+
+  "testing_data": "A held-out test split of 2,000 clinical notes (syn44829104) from the same annotation pipeline, stratified by institution.",
+  "testing_factors": "Evaluated across entity type (gene, disease, drug), note length, and originating institution to assess demographic and source biases.",
+  "testing_metrics": "Entity-level precision, recall, and F1 score (strict match). Also measured per-entity-type F1 and macro-averaged F1.",
+  "results": "Overall strict-match F1: 0.891. Per-type F1: gene 0.873, disease 0.912, drug 0.887. Performance was consistent across institutions (F1 range: 0.88-0.90).",
+  "results_summary": "Strong NER performance (F1 > 0.87) across all entity types with minimal cross-institution variance.",
+
+  "hardware_type": "NVIDIA A100 40GB",
+  "hours_used": "4",
+  "cloud_provider": "AWS",
+  "cloud_region": "us-east-1",
+  "co2_emitted": "0.95 kg CO2 (estimated via ML CO2 Impact calculator)",
+
+  "model_card_contact": "modelxchange-support@sagebase.org",
+
+  "citation_bibtex": "@article{sage2025bioner,\n  title={BioNER-Clinical: Fine-tuned NER for Clinical Notes},\n  author={Sage Bionetworks and INCLUDE DCC},\n  journal={bioRxiv},\n  year={2025}\n}",
+  "citation_apa": "Sage Bionetworks & INCLUDE DCC. (2025). BioNER-Clinical: Fine-tuned NER for Clinical Notes. bioRxiv.",
+
+  "glossary": "NER: Named Entity Recognition. IOB2: Inside-Outside-Beginning tagging scheme for sequence labeling. WordPiece: subword tokenization algorithm used by BERT.",
+
+  "model_card_authors": ["Anh Vu", "James Eddy"],
+
+  "more_information": "For access to the training data or to request model weights, contact the Sage Bionetworks data coordination team or visit https://www.synapse.org/#!Synapse:syn11839775.",
+
+  "model_examination": "Attention weight analysis showed the model attends heavily to morphological suffixes (e.g. -ase, -mab) for drug entities and to capitalized tokens for gene entities. Error analysis on the test set showed most false negatives occur on abbreviations not seen in training.",
+
+  "model_specs": "BERT-base-uncased architecture (12 layers, 768 hidden, 12 heads) with a token classification head (linear layer over 7 IOB2 labels). Cross-entropy loss.",
+  "compute_infrastructure": "Single-node training on AWS EC2 p4d.24xlarge instance.",
+  "hardware_requirements": "Inference requires at least 2GB GPU memory. CPU inference supported but ~10x slower.",
+  "software": "Python 3.11, PyTorch 2.1, Transformers 4.36, Datasets 2.16",
+
+  "other_risk": "Training data consisted of de-identified clinical notes; residual re-identification risk exists if the model memorizes rare token sequences (differential privacy was not applied). Model may also produce false positive entity extractions that could propagate errors in automated pipelines if outputs are not reviewed.",
+  "mitigations": "All training data underwent HIPAA Safe Harbor de-identification. Model outputs should be treated as preliminary and reviewed by domain experts before use in any analysis.",
+  "model_use_conditions": ["DUO:0000042", "DUO:0000006", "DUO:0000015"]
+}
