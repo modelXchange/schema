@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-hf-basic-metadata",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-hfbasicmetadata",
   "title": "HuggingFace Basic Metadata Schema",
   "description": "Schema derived from the HuggingFace hub-docs basic model card metadata template (YAML frontmatter). Source: https://github.com/huggingface/hub-docs/blob/main/modelcard.md",
   "type": "object",
