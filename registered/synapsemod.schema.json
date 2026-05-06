@@ -5,10 +5,6 @@
   "description": "Composable Synapse-specific flat schema component for risks and model use conditions. The properties are flat rather than nested for Synapse compatibility.",
   "type": "object",
   "properties": {
-    "privacy_risk": {
-      "type": "string",
-      "description": "Privacy-related concerns such as memorization, leakage, re-identification, or sensitive data exposure."
-    },
     "other_risk": {
       "type": "string",
       "description": "Other relevant risks such as fairness, safety, misuse, security, or operational concerns."

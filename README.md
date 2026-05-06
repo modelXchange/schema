@@ -9,6 +9,7 @@ This repository currently contains model card schemas derived from the Hugging F
 - Minimal composed schema: `modelcardminimal.schema.json`
 - Hugging Face standalone top-level modules: `modules/`
 - Synapse registry script: `scripts/register_schema.py` (add `--dry-run` for validation only)
+- Example instance: `examples/modelcard.example.json`
 - PR workflow: `.github/workflows/main-ci.yml`
 
 
@@ -86,3 +87,7 @@ flowchart TB
   class technical,citation,glossary,more_info,authors optional;
   class syn synapse;
 ```
+
+## Template Comparison
+
+See [TEMPLATE_COMPARISON.md](TEMPLATE_COMPARISON.md) for a detailed comparison of the basic metadata template vs. the human-readable template, including property overlaps, unique fields, and evaluation structure differences.
