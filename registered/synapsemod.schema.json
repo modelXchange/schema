@@ -15,9 +15,19 @@
     },
     "model_use_conditions": {
       "type": "array",
-      "description": "List of model use conditions, intended to capture Data Use Ontology style labels or equivalent policy labels.",
+      "description": "List of model use conditions using Data Use Ontology (DUO) codes.",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": [
+          "General research use (GRU)",
+          "Ethics approval required (IRB)",
+          "User specific restriction (US)",
+          "Non-commercial use only (NCU)",
+          "Not for profit, non-commercial use only (NPUNCU)",
+          "Research specific restrictions (RS)",
+          "Time limit on use (TS)",
+          "Geographical restriction (GS)"
+        ]
       },
       "minItems": 1
     }

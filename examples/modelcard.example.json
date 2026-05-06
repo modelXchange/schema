@@ -62,5 +62,5 @@
 
   "other_risk": "Training data consisted of de-identified clinical notes; residual re-identification risk exists if the model memorizes rare token sequences (differential privacy was not applied). Model may also produce false positive entity extractions that could propagate errors in automated pipelines if outputs are not reviewed.",
   "mitigations": "All training data underwent HIPAA Safe Harbor de-identification. Model outputs should be treated as preliminary and reviewed by domain experts before use in any analysis.",
-  "model_use_conditions": ["DUO:0000042", "DUO:0000006", "DUO:0000015"]
+  "model_use_conditions": ["General research use (GRU)", "Ethics approval required (IRB)", "Non-commercial use only (NCU)"]
 }
