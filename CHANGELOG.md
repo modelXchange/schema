@@ -1,5 +1,20 @@
 ## CHANGELOG
 
+### 2026-05-06 (add-duo)
+
+- Updated `model_use_conditions` in `registered/synapsemod.schema.json` from a free-form string array to a constrained enum of human-readable Data Use Ontology (DUO) labels (e.g. `"General research use (GRU)"`, `"Non-commercial use only (NCU)"`).
+- Updated `examples/modelcard.example.json` to use the new human-readable DUO labels instead of bare DUO codes.
+
+### 2026-05-06 (revisions-and-examples, PR #5)
+
+- Added `registered/hf-basic-metadata.schema.json` covering the Hugging Face basic metadata template fields (pipeline_tag, tags, language, license, etc.).
+- Added `registered/modelxchange-license.schema.json` as a standalone reusable license module.
+- Added `examples/modelcard.example.json` with a complete example instance.
+- Added `TEMPLATE_COMPARISON.md` comparing the basic metadata template vs. the human-readable template.
+- Removed `privacy_risk` property per issue #2.
+- Removed `additionalProperties: false` from the Synapse extension schema to allow forward compatibility.
+- Fixed `$id` references in registered schemas.
+
 ### Draft
 
 - Mapped the reference template variables into a Draft-07 JSON Schema.

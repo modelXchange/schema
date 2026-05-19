@@ -2,6 +2,17 @@
 
 This repository currently contains model card schemas derived from the Hugging Face model card template, composed with Synapse extensions. Schemas are registered under `org.synapse.modelxchange`.
 
+> [!NOTE]
+> **Registered Schema**
+>
+> The canonical registered schema in Synapse is:
+> ```
+> https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcard
+> ```
+> Use this URL for curation tasks / validating annotations against the modelXchange model card schema in Synapse.
+
+## Repository Contents
+
 - Upstream reference: [modelcard_template](https://raw.githubusercontent.com/huggingface/huggingface_hub/refs/heads/main/src/huggingface_hub/templates/modelcard_template.md)
 - Generated schema: `huggingface-modelcard.schema.json`
 - Synapse extension component: `synapsemod.schema.json`
