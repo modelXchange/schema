@@ -7,7 +7,7 @@ This repository currently contains model card schemas derived from the Hugging F
 >
 > The canonical registered schema in Synapse is:
 > ```
-> https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcard
+> https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcardflat
 > ```
 > Use this URL for curation tasks / validating annotations against the modelXchange model card schema in Synapse.
 
