@@ -1,0 +1,318 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repo-prod.prod.sagebase.org/repo/v1/schema/type/registered/org.synapse.modelxchange-modelcardflat",
+  "title": "Model Card Schema (Flat)",
+  "description": "Pre-resolved variant of org.synapse.modelxchange-modelcard. All sub-schema properties are merged into a single top-level properties object for compatibility with tools that do not resolve $ref entries in allOf (e.g. the Synapse Python client and Synapse UI). Regenerate with: python scripts/preresolve.py",
+  "type": "object",
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "description": "Display identifier or name of the model.",
+      "default": "Model ID"
+    },
+    "model_summary": {
+      "type": "string",
+      "description": "Short summary shown near the top of the model card.",
+      "default": ""
+    },
+    "model_description": {
+      "type": "string",
+      "description": "Long-form description of the model.",
+      "default": ""
+    },
+    "developers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Person, team, or organization that developed the model.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "funded_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Optional funding source for the model.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "shared_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Optional person, team, or organization that shared the model.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "model_type": {
+      "type": "string",
+      "description": "Model family or task type.",
+      "default": "[More Information Needed]"
+    },
+    "language": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Language or languages relevant to the model.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "license": {
+      "type": "string",
+      "description": "License identifier or license text reference.",
+      "default": "[More Information Needed]"
+    },
+    "base_model": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Optional source model used for fine-tuning or adaptation.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "repo": {
+      "type": "string",
+      "description": "Optional repository URL or reference.",
+      "default": "[More Information Needed]"
+    },
+    "paper": {
+      "type": "string",
+      "description": "Optional paper URL or citation reference.",
+      "default": "[More Information Needed]"
+    },
+    "demo": {
+      "type": "string",
+      "description": "Optional demo URL or description.",
+      "default": "[More Information Needed]"
+    },
+    "direct_use": {
+      "type": "string",
+      "description": "Primary intended uses of the model.",
+      "default": "[More Information Needed]"
+    },
+    "downstream_use": {
+      "type": "string",
+      "description": "Optional downstream or derivative use cases.",
+      "default": "[More Information Needed]"
+    },
+    "out_of_scope_use": {
+      "type": "string",
+      "description": "Uses that should be considered out of scope.",
+      "default": "[More Information Needed]"
+    },
+    "bias_risks_limitations": {
+      "type": "string",
+      "description": "Known biases, risks, or limitations.",
+      "default": "[More Information Needed]"
+    },
+    "bias_recommendations": {
+      "type": "string",
+      "description": "Recommendations for safe or appropriate use.",
+      "default": "Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations."
+    },
+    "get_started_code": {
+      "type": "string",
+      "description": "Code snippet or instructions for getting started with the model.",
+      "default": "[More Information Needed]"
+    },
+    "training_data": {
+      "type": "string",
+      "description": "Description of the training data.",
+      "default": "[More Information Needed]"
+    },
+    "preprocessing": {
+      "type": "string",
+      "description": "Optional preprocessing details.",
+      "default": "[More Information Needed]"
+    },
+    "training_regime": {
+      "type": "string",
+      "description": "Training procedure or regime summary.",
+      "default": "[More Information Needed]"
+    },
+    "speeds_sizes_times": {
+      "type": "string",
+      "description": "Optional training or inference speeds, model sizes, or timing information.",
+      "default": "[More Information Needed]"
+    },
+    "testing_data": {
+      "type": "string",
+      "description": "Description of testing or evaluation data.",
+      "default": "[More Information Needed]"
+    },
+    "testing_factors": {
+      "type": "string",
+      "description": "Factors considered during evaluation.",
+      "default": "[More Information Needed]"
+    },
+    "testing_metrics": {
+      "type": "string",
+      "description": "Metrics used to evaluate the model.",
+      "default": "[More Information Needed]"
+    },
+    "results": {
+      "type": "string",
+      "description": "Detailed evaluation results.",
+      "default": "[More Information Needed]"
+    },
+    "results_summary": {
+      "type": "string",
+      "description": "Short summary of evaluation results.",
+      "default": ""
+    },
+    "hardware_type": {
+      "type": "string",
+      "description": "Hardware used for training or relevant environmental impact estimates.",
+      "default": "[More Information Needed]"
+    },
+    "hours_used": {
+      "type": "string",
+      "description": "Hours of compute used.",
+      "default": "[More Information Needed]"
+    },
+    "cloud_provider": {
+      "type": "string",
+      "description": "Cloud provider used, if applicable.",
+      "default": "[More Information Needed]"
+    },
+    "cloud_region": {
+      "type": "string",
+      "description": "Cloud region used, if applicable.",
+      "default": "[More Information Needed]"
+    },
+    "co2_emitted": {
+      "type": "string",
+      "description": "Estimated carbon emissions.",
+      "default": "[More Information Needed]"
+    },
+    "model_card_contact": {
+      "type": "string",
+      "description": "Contact information for the model card.",
+      "default": "[More Information Needed]"
+    },
+    "citation_bibtex": {
+      "type": "string",
+      "description": "Optional BibTeX citation.",
+      "default": "[More Information Needed]"
+    },
+    "citation_apa": {
+      "type": "string",
+      "description": "Optional APA citation.",
+      "default": "[More Information Needed]"
+    },
+    "glossary": {
+      "type": "string",
+      "description": "Optional glossary content.",
+      "default": "[More Information Needed]"
+    },
+    "model_card_authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Optional author or authors of the model card.",
+      "default": [
+        "[More Information Needed]"
+      ]
+    },
+    "more_information": {
+      "type": "string",
+      "description": "Optional additional information.",
+      "default": "[More Information Needed]"
+    },
+    "model_examination": {
+      "type": "string",
+      "description": "Optional analysis or examination of model behavior.",
+      "default": "[More Information Needed]"
+    },
+    "model_specs": {
+      "type": "string",
+      "description": "Model architecture and objective details.",
+      "default": "[More Information Needed]"
+    },
+    "compute_infrastructure": {
+      "type": "string",
+      "description": "Description of the compute infrastructure.",
+      "default": "[More Information Needed]"
+    },
+    "hardware_requirements": {
+      "type": "string",
+      "description": "Hardware requirements or hardware details.",
+      "default": "[More Information Needed]"
+    },
+    "software": {
+      "type": "string",
+      "description": "Software stack or software requirements.",
+      "default": "[More Information Needed]"
+    },
+    "other_risk": {
+      "type": "string",
+      "description": "Other relevant risks such as fairness, safety, misuse, security, or operational concerns."
+    },
+    "mitigations": {
+      "type": "string",
+      "description": "Known mitigations, safeguards, or recommended controls."
+    },
+    "model_use_conditions": {
+      "type": "array",
+      "description": "List of model use conditions using Data Use Ontology (DUO) codes.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "General research use (GRU)",
+          "Ethics approval required (IRB)",
+          "User specific restriction (US)",
+          "Non-commercial use only (NCU)",
+          "Not for profit, non-commercial use only (NPUNCU)",
+          "Research specific restrictions (RS)",
+          "Time limit on use (TS)",
+          "Geographical restriction (GS)"
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "model_id",
+    "model_summary",
+    "model_description",
+    "developers",
+    "model_type",
+    "language",
+    "license",
+    "direct_use",
+    "out_of_scope_use",
+    "bias_risks_limitations",
+    "bias_recommendations",
+    "get_started_code",
+    "training_data",
+    "training_regime",
+    "testing_data",
+    "testing_factors",
+    "testing_metrics",
+    "results",
+    "results_summary",
+    "hardware_type",
+    "hours_used",
+    "cloud_provider",
+    "cloud_region",
+    "co2_emitted",
+    "model_card_contact"
+  ]
+}

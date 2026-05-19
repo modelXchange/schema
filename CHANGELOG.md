@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### 2026-05-19 (register-flattened-version, issue #10)
+
+- Added `scripts/preresolve.py` to generate pre-resolved flat variants of composed schemas. Resolves `allOf`/`$ref` entries and merges all sub-schema properties into a single top-level `properties` object. Includes a `--check` mode for CI to verify flat files are in sync with their sources.
+- Added `registered/modelcard-flat.schema.json` (`org.synapse.modelxchange-modelcardflat`): pre-resolved variant of `org.synapse.modelxchange-modelcard` for compatibility with tools that do not expand `$ref` entries in `allOf` (e.g. Synapse Python client, Synapse UI).
+- Updated `.github/workflows/main-ci.yml` to run `preresolve.py --check` before schema registration on both PR and push.
+
 ### 2026-05-06 (add-duo)
 
 - Updated `model_use_conditions` in `registered/synapsemod.schema.json` from a free-form string array to a constrained enum of human-readable Data Use Ontology (DUO) labels (e.g. `"General research use (GRU)"`, `"Non-commercial use only (NCU)"`).
