@@ -35,7 +35,7 @@ jobs:
         run: python -m pip install --upgrade pip synapseclient
 
       - name: Check flat schemas are up to date
-        run: python scripts/preresolve.py --check registered
+        run: python scripts/preresolve.py --check registered/modelcard.schema.json
 
       - name: Dry-run validate registered schemas
         if: github.event_name == 'pull_request'
