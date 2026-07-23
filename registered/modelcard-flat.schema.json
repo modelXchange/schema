@@ -261,6 +261,11 @@
       "description": "Software stack or software requirements.",
       "default": "[More Information Needed]"
     },
+    "target_platform": {
+      "type": "string",
+      "description": "Target deployment platform for the model, expressed as OS/architecture (e.g. 'linux/amd64').",
+      "default": "[More Information Needed]"
+    },
     "other_risk": {
       "type": "string",
       "description": "Other relevant risks such as fairness, safety, misuse, security, or operational concerns."
