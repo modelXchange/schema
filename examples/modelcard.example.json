@@ -59,6 +59,7 @@
   "compute_infrastructure": "Single-node training on AWS EC2 p4d.24xlarge instance.",
   "hardware_requirements": "Inference requires at least 2GB GPU memory. CPU inference supported but ~10x slower.",
   "software": "Python 3.11, PyTorch 2.1, Transformers 4.36, Datasets 2.16",
+  "target_platform": "linux/amd64",
 
   "other_risk": "Training data consisted of de-identified clinical notes; residual re-identification risk exists if the model memorizes rare token sequences (differential privacy was not applied). Model may also produce false positive entity extractions that could propagate errors in automated pipelines if outputs are not reviewed.",
   "mitigations": "All training data underwent HIPAA Safe Harbor de-identification. Model outputs should be treated as preliminary and reviewed by domain experts before use in any analysis.",

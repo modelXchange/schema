@@ -24,6 +24,11 @@
       "type": "string",
       "description": "Software stack or software requirements.",
       "default": "[More Information Needed]"
+    },
+    "target_platform": {
+      "type": "string",
+      "description": "Target container build platform for the model, expressed in OCI/Docker platform format (os/arch[/variant]), e.g. 'linux/amd64', 'linux/arm64', 'linux/arm/v7', 'windows/amd64', 'darwin/arm64'.",
+      "default": "[More Information Needed]"
     }
   }
 }
